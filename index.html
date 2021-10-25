@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Beautysalon</title>
+
+        <link
+            rel="shortcut icon"
+            href="assets/img/favicon.ico"
+            type="image/x-icon"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="assets/fonts/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header id="header">
+            <nav class="container">
+                <a href="#" class="logo">beauty<span>salon</span>.</a>
+                <div class="menu">
+                    <ul class="grid">
+                        <li><a href="#home" class="title">Início</a></li>
+                        <li><a href="#about" class="title">Sobre</a></li>
+                        <li><a href="#services" class="title">Serviços</a></li>
+                        <li>
+                            <a href="#testimonials" class="title"
+                                >Depoimentos</a
+                            >
+                        </li>
+                        <li><a href="#contact" class="title">Contato</a></li>
+
+                        <li>
+                            <div
+                                class="icon-moon"
+                                id="theme-btn"
+                                data-theme="1"
+                                title="Alterar tema do site"
+                            ></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="toggle icon-menu"></div>
+
+                <div class="toggle icon-close"></div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- HOME -->
+            <section class="section" id="home">
+                <div class="container grid">
+                    <div class="image">
+                        <img
+                            src="assets/img/imagem-1.jpg"
+                            alt="Mulher sorrindo penteando outra mulher"
+                        />
+                    </div>
+
+                    <div class="text">
+                        <h2 class="title">
+                            Saúde natural para os seus cabelos
+                        </h2>
+
+                        <p>
+                            Um salão exclusivo em São Paulo, especializado em
+                            tratamentos naturais.
+                        </p>
+
+                        <a href="#" class="button">Agendar um horário</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider-1"></div>
+
+            <!-- ABOUT -->
+            <section class="section" id="about">
+                <div class="container grid">
+                    <div class="image">
+                        <img
+                            src="assets/img/imagem-2.jpg"
+                            alt="3 mulheres sorrindo"
+                        />
+                    </div>
+
+                    <div class="text">
+                        <h2 class="title">Sobre nós</h2>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Consequatur sunt ipsum laudantium, natus saepe
+                            assumenda accusamus adipisci quod qui, vel ab
+                            inventore earum, ipsam maxime corrupti nemo
+                            doloremque quam veritatis.
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Labore expedita ut nisi quod, sequi culpa
+                            dolorum aliquid nam debitis maiores nostrum facere
+                            repellendus illo. Earum, eius? Culpa ex odio
+                            expedita?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Deleniti distinctio laboriosam delectus
+                            consequatur quam! Quidem ducimus ipsam aliquam,
+                            nisi, animi odio at aliquid veritatis culpa, aperiam
+                            omnis sapiente accusamus atque!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider-2"></div>
+
+            <!-- SERVICES -->
+            <section class="section" id="services">
+                <div class="container grid">
+                    <header>
+                        <h2 class="title">Serviços</h2>
+                        <p class="subtitle">
+                            Com mais de 10 anos no mercado, o
+                            <strong>Beautysalon</strong> já conquistou clientes
+                            de inúmeros países com seus tratamentos exclusivos e
+                            totalmente naturais
+                        </p>
+                    </header>
+
+                    <div class="cards grid">
+                        <div class="card">
+                            <div class="icons icon-woman-hair"></div>
+                            <h3 class="title">Terapia capilar</h3>
+                            <p>
+                                Terapia completa para couro cabeludo e fios,
+                                protegendo todos os tipos de cabelos, inclusive
+                                os longos e finos.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <div class="icons icon-trim"></div>
+                            <h3 class="title">Cortes</h3>
+                            <p>
+                                A nossa equipe é repleta de profissionais
+                                renomados, famosos por lançarem tendências com
+                                cortes diferenciados e clássicos.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <div class="icons icon-cosmetic"></div>
+                            <h3 class="title">Tratamentos</h3>
+                            <p>
+                                O beautysalon conta com diversos tratamentos
+                                naturais e totalmente veganos, para qualquer
+                                tipo de cabelo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider-1"></div>
+
+            <!-- TESTIMONIALS -->
+            <section class="section" id="testimonials">
+                <div class="container">
+                    <header>
+                        <h2 class="title">
+                            Depoimentos de quem já passou por aqui
+                        </h2>
+                    </header>
+
+                    <div class="testimonials swiper">
+                        <div class="swiper-wrapper">
+                            <div class="testimonial swiper-slide">
+                                <blockquote>
+                                    <p>
+                                        <span>&ldquo;</span>
+                                        Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Molestiae, nulla.
+                                        Deserunt accusamus optio totam eum. Quod
+                                        incidunt cupiditate mollitia deserunt
+                                        possimus reprehenderit, iste esse
+                                        voluptatem minima. Accusantium cum ex
+                                        iste.
+                                    </p>
+                                    <cite>
+                                        <img
+                                            src="assets/img/wanessa-souza.jpg"
+                                            alt="Wanessa Souza"
+                                        />
+                                        Wanessa Souza
+                                    </cite>
+                                </blockquote>
+                            </div>
+
+                            <div class="testimonial swiper-slide">
+                                <blockquote>
+                                    <p>
+                                        <span>&ldquo;</span>
+                                        Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Molestiae, nulla.
+                                        Deserunt accusamus optio totam eum. Quod
+                                        incidunt cupiditate mollitia deserunt
+                                        possimus reprehenderit, iste esse
+                                        voluptatem minima. Accusantium cum ex
+                                        iste.
+                                    </p>
+                                    <cite>
+                                        <img
+                                            src="assets/img/pedro-silva.jpg"
+                                            alt="Pedro Silva"
+                                        />
+                                        Pedro Silva
+                                    </cite>
+                                </blockquote>
+                            </div>
+
+                            <div class="testimonial swiper-slide">
+                                <blockquote>
+                                    <p>
+                                        <span>&ldquo;</span>
+                                        Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Molestiae, nulla.
+                                        Deserunt accusamus optio totam eum. Quod
+                                        incidunt cupiditate mollitia deserunt
+                                        possimus reprehenderit, iste esse
+                                        voluptatem minima. Accusantium cum ex
+                                        iste.
+                                    </p>
+                                    <cite>
+                                        <img
+                                            src="assets/img/matheus-pereira.jpg"
+                                            alt="Matheus Pereira"
+                                        />
+                                        Matheus Pereira
+                                    </cite>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider-2"></div>
+
+            <!-- CONTACT -->
+            <section class="section" id="contact">
+                <div class="container grid">
+                    <div class="text">
+                        <h2 class="title">Entre em contato com a gente!</h2>
+                        <p class="subtitle">
+                            Entre em contato com a Beautysalon, queremos tirar
+                            suas dúvidas, ouvir suas críticas e sugestões.
+                        </p>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=5511998456754&text=Olá, gostaria de agendar um horário."
+                            target="_blank"
+                            class="button"
+                            ><span class="icon-whatsapp"></span> Entrar em
+                            contato</a
+                        >
+                    </div>
+
+                    <div class="links">
+                        <ul class="grid">
+                            <li>
+                                <span class="icon-phone1"></span> 11 99845-6754
+                            </li>
+
+                            <li>
+                                <span class="icon-map-pin"></span> R. Amauri
+                                Souza, 346
+                            </li>
+
+                            <li>
+                                <span class="icon-mail"></span>
+                                contato@beautysalon.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider-1"></div>
+        </main>
+
+        <footer class="section">
+            <div class="container grid">
+                <div class="brand">
+                    <a href="#home" class="logo logo-alt"
+                        >beauty<span>salon</span>.</a
+                    >
+                    <p>©2021 Beautysalon.</p>
+                    <p>Todos os direitos reservados.</p>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.instagram.com" target="_blank"
+                        ><span class="icon-instagram"></span
+                    ></a>
+                    <a href="https://www.facebook.com" target="_blank"
+                        ><span class="icon-facebook"></span
+                    ></a>
+                    <a href="https://www.youtube.com" target="_blank"
+                        ><span class="icon-youtube"></span
+                    ></a>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#home" class="back-to-top">
+            <span class="icon-chevron-up"></span>
+        </a>
+
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

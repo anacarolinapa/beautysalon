@@ -1,0 +1,683 @@
+/* ==================== RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==================== VARIÁVEIS ==================== */
+:root {
+    --header-height: 4.5rem;
+
+    /* colors - Ex: 159, 36, 270, 345 */
+    --hue: 270;
+    /* HSL color mode */
+    --base-color: hsl(var(--hue) 36% 57%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color-alt: hsl(var(--hue) 57% 53%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --body-color: hsl(0 0% 98%);
+
+    /* fonts */
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
+
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
+}
+
+/* ==================== BASE ==================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 400 1rem var(--body-font);
+    color: var(--text-color);
+    background: var(--body-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==================== THEME SITE ==================== */
+body.active {
+    --base-color: #444;
+    --base-color-second: #444;
+    --base-color-alt: #fff;
+    --title-color: #fff;
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: #333;
+    --body-color: #222;
+}
+
+body.active #header {
+    border-bottom: 1px solid var(--text-color-light);
+}
+
+body.active #about,
+body.active #testimonials,
+body.active footer {
+    background: var(--body-color);
+}
+
+body.active .divider-1,
+body.active .divider-2,
+body.active #services .cards .card,
+body.active #testimonials .testimonials .testimonial blockquote,
+body.active .back-to-top.show {
+    background: var(--text-color-light);
+    color: #fff;
+}
+
+body.active .logo span,
+body.active .logo-alt span {
+    color: #444;
+}
+
+.title {
+    font: 700 var(--title-font-size) var(--title-font);
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+.button {
+    background: var(--base-color);
+    color: var(--text-color-light);
+    /* PARA CONVERTER O PX PARA REM É SÓ PEGAR O PX / 16 O RESULTADO SERÁ O REM */
+    height: 3.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    border-radius: 0.25rem;
+    font: 500 1rem var(--body-font);
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: var(--base-color-alt);
+}
+
+.divider-1 {
+    height: 1px;
+    background: linear-gradient(
+        270deg,
+        hsla(var(--hue), 36%, 57%, 1),
+        hsla(var(--hue), 65%, 88%, 0.34)
+    );
+}
+
+.divider-2 {
+    height: 1px;
+    background: linear-gradient(
+        270deg,
+        hsla(var(--hue), 65%, 88%, 0.34),
+        hsla(var(--hue), 36%, 57%, 1)
+    );
+}
+
+/* ==================== LAYOUT ==================== */
+.container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.section {
+    padding: calc(1rem + var(--header-height)) 0;
+}
+
+.section .title {
+    margin-bottom: 1rem;
+}
+
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
+}
+
+.section header {
+    margin-bottom: 4rem;
+}
+
+.section header strong {
+    color: var(--base-color);
+}
+
+#header {
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 2rem;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: var(--body-color);
+}
+
+#header.scroll {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+/* ==================== LOGO ==================== */
+.logo {
+    font: 700 1.31rem var(--title-font);
+    color: var(--title-color);
+}
+
+.logo span {
+    color: var(--base-color);
+}
+
+.logo-alt span {
+    color: var(--body-color);
+}
+
+/* ==================== NAVEGAÇÃO ==================== */
+#header nav {
+    /* TAMANHO DA FONTE É RELATIVO CONFORME O TAMANHO DA TELA */
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#header #theme-btn {
+    cursor: pointer;
+    display: inline-block;
+}
+
+#header nav .menu ul li {
+    text-align: center;
+}
+
+#header nav .menu ul li a {
+    transition: color 0.2s;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+#header nav .menu ul li a:hover,
+#header nav .menu ul li a.active {
+    color: var(--base-color);
+}
+
+#header nav .menu ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--base-color);
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+    transition: width 0.2s;
+}
+
+#header nav .menu ul li a:hover::after,
+#header nav .menu ul li a.active::after {
+    width: 100%;
+}
+
+/* MOTRAR MENU */
+#header nav .menu {
+    opacity: 0;
+    visibility: hidden;
+    top: -20rem;
+    transition: 0.2s;
+}
+
+#header nav .menu ul {
+    display: none;
+}
+
+#header nav.show .menu {
+    opacity: 1;
+    visibility: visible;
+    background: var(--body-color);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+}
+
+#header nav.show .menu ul {
+    gap: 4rem;
+    display: grid;
+}
+
+/* TOGGLE MENU */
+#header nav .toggle {
+    color: var(--base-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#header nav .icon-close {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -1.5rem;
+    right: 1.5rem;
+    transition: 0.2s;
+}
+
+#header nav.show .icon-close {
+    visibility: visible;
+    opacity: 1;
+    top: 1.5rem;
+}
+
+/* ==================== HOME ==================== */
+#home {
+    overflow: hidden;
+}
+
+#home .container {
+    margin: 0;
+}
+
+#home .container .image {
+    position: relative;
+}
+
+#home .container .image::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -16.8%;
+    right: 0;
+    left: 16.7%;
+    z-index: 0;
+}
+
+#home .container .image::before,
+#home .container .image img {
+    border-radius: 0.25rem;
+}
+
+#home .container .image img {
+    position: relative;
+    right: 2.93rem;
+}
+
+#home .container .text {
+    margin: 0 1.5rem;
+    text-align: center;
+}
+
+#home .container .text p {
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+/* ==================== ABOUT ==================== */
+#about {
+    background: #fff;
+}
+
+#about .container {
+    margin: 0;
+}
+
+#about .container .image {
+    position: relative;
+}
+
+#about .container .image::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -8.3%;
+    left: -33%;
+    z-index: 0;
+}
+
+#about .container .image::before,
+#about .container .image img {
+    border-radius: 0.25rem;
+}
+
+#about .container .image img {
+    position: relative;
+}
+
+#about .container .text {
+    margin: 0 1.5rem;
+    text-align: justify;
+}
+
+#about .container .text p {
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+/* ==================== SERVICES ==================== */
+#services .cards.grid {
+    gap: 1.5rem;
+}
+
+#services .cards .card {
+    padding: 3.625rem 2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 0.25rem solid var(--base-color);
+    border-radius: 0.25rem 0.25rem 0 0;
+    text-align: center;
+}
+
+#services .cards .card .icons {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    color: var(--base-color);
+}
+
+#services .cards .card .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* ==================== TESTIOMONIALS ==================== */
+#testimonials {
+    background: #fff;
+}
+
+#testimonials .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#testimonials header {
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+#testimonials .testimonials .testimonial blockquote {
+    padding: 2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0.25rem;
+}
+
+#testimonials .testimonials .testimonial blockquote p {
+    position: relative;
+    text-indent: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+    line-height: 1.5rem;
+}
+
+#testimonials .testimonials .testimonial blockquote span {
+    font: 700 2.5rem serif;
+    position: absolute;
+    top: -0.375rem;
+    left: -1.875rem;
+    color: var(--base-color);
+}
+
+#testimonials .testimonials .testimonial blockquote cite {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+}
+
+#testimonials .testimonials .testimonial blockquote cite img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    clip-path: circle();
+    margin-right: 0.5rem;
+}
+
+#testimonials .testimonials .swiper-wrapper .swiper-slide {
+    height: auto;
+    padding: 4rem 1rem;
+}
+
+#testimonials .testimonials.swiper .swiper-pagination-bullet-active {
+    background: var(--base-color);
+}
+
+/* ==================== CONTACT ==================== */
+#contact .grid {
+    gap: 4rem;
+}
+
+#contact .text p {
+    margin-bottom: 2rem;
+}
+
+#contact .text .button span,
+#contact .links ul li span {
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+}
+
+#contact .links ul.grid {
+    gap: 2rem;
+}
+
+#contact .links ul li {
+    display: flex;
+    align-items: center;
+}
+
+#contact .links ul li span {
+    color: var(--base-color);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: var(--base-color);
+}
+
+footer.section {
+    padding: 4rem 0;
+}
+
+footer .container .brand .logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+footer .container .brand p {
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer .container .social a {
+    margin-right: 2rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+footer .container .social a:hover {
+    transform: translateY(-5px);
+}
+
+footer .container .social a span {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+.back-to-top {
+    background: var(--base-color);
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    color: var(--text-color-light);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(100%);
+}
+
+.back-to-top:hover {
+    background: var(--base-color-alt);
+}
+
+.back-to-top.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==================== MEDIA ==================== */
+
+/* > 1200 */
+@media (min-width: 1200px) {
+    /* ==================== LAYOUT ==================== */
+    .container {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+}
+
+/* > 1023 */
+@media (min-width: 1023px) {
+}
+
+/* > 992 */
+@media (min-width: 992px) {
+    :root {
+        --title-font-size: 2.2rem;
+        --subtitle-font-size: 1.125rem;
+    }
+
+    /* ==================== SERVICES ==================== */
+    #services .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* > 767 */
+@media (min-width: 767px) {
+    /* ==================== LAYOUT ==================== */
+    .section {
+        padding: 8rem 0;
+    }
+
+    .section header,
+    #testimonials header {
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button {
+        height: 3.125rem;
+    }
+
+    main {
+        margin-top: var(--header-height);
+    }
+
+    /* ==================== MENU ==================== */
+    #header nav .menu {
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+    }
+
+    #header nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    #header nav .menu ul li a.title {
+        font: 400 1rem var(--title-font);
+    }
+
+    #header nav .icon-menu {
+        display: none;
+    }
+
+    /* ==================== HOME ==================== */
+    #home .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    #home .container .image {
+        order: 1;
+    }
+
+    #home .container .text {
+        order: 0;
+        max-width: 24rem;
+        text-align: left;
+    }
+
+    /* ==================== ABOUT ==================== */
+    #about .container {
+        margin: 0 auto;
+        grid-auto-flow: column;
+    }
+
+    /* ==================== SERVICES ==================== */
+    #services .cards {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    /* ==================== TESTIMONIALS ==================== */
+    #testimonials .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ==================== CONTACT ==================== */
+    #contact .container {
+        grid-auto-flow: column;
+        align-items: center;
+    }
+
+    #contact .text {
+        max-width: 25rem;
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer.section {
+        padding: 3.75rem 0;
+    }
+
+    footer .container {
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .container .brand .logo {
+        font-size: 2.25rem;
+    }
+}
