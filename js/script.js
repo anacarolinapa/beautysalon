@@ -118,8 +118,7 @@ function activeMenuSection() {
 ======================================================================================== */
 let themeBtn = document.querySelector('#theme-btn');
 
-themeBtn.addEventListener('click', function() {    
-    console.log(themeBtn.getAttribute('data-theme'));
+themeBtn.addEventListener('click', function() {
     if (themeBtn.getAttribute('data-theme') === "1") {
         document.body.classList.add('active');
         themeBtn.classList.remove('icon-moon');
